@@ -1,0 +1,115 @@
+#!/bin/sh
+
+read select domain exp save
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+printf "\n${RED}Generating Subdomains... ${RED}\n"
+
+case $select in
+
+  sub-exp)
+    while read lines
+	do
+		while read add
+		do
+			res2=$(echo "$lines" | cut -d . -f 1)
+			res=$(echo "$lines" | cut -d . -f 1 | sed -e 's/$/-'$add'/')
+
+			result=$(echo "$lines" | sed 's/'$res2'/'$res'/g')
+			echo "$result" | sort -u | tee -a ./result/"$save"-Post-Add.txt
+
+		done < "$exp"
+
+	done < "$domain"
+	httpx -l "./result/"$save"-all.txt" -silent --status-code -o "./result/"$save"-resolved.txt"
+    ;;
+
+  exp-sub)
+    while read lines
+	do
+		while read add
+		do
+			res2=$(echo "$lines" | cut -d . -f 1)
+			res=$(echo "$lines" | cut -d . -f 1 | sed 's/^/'$add'-/') 
+
+			result=$(echo "$lines" | sed 's/'$res2'/'$res'/g')
+			echo "$result" | sort -u | tee -a ./result/"$save"-Pre-Add.txt
+
+		done < "$exp"
+
+	done < "$domain"
+	httpx -l "./result/"$save"-all.txt" -silent --status-code -o "./result/"$save"-resolved.txt"
+    ;;
+
+  sub.exp)
+    while read lines
+	do
+		while read add
+		do
+			res2=$(echo "$lines" | cut -d . -f 1)
+			res=$(echo "$lines" | cut -d . -f 1 | sed -e 's/$/'.$add'/')
+
+			result=$(echo "$lines" | sed 's/'$res2'/'$res'/g')
+			echo "$result" | sort -u | tee -a ./result/"$save"-Post.Add.txt
+
+		done < "$exp"
+
+	done < "$domain"
+	httpx -l "./result/"$save"-all.txt" -silent --status-code -o "./result/"$save"-resolved.txt"
+    ;;
+    
+  exp.sub)
+    while read lines
+	do
+		while read add
+		do
+			res2=$(echo "$lines" | cut -d . -f 1)
+			res=$(echo "$lines" | cut -d . -f 1 | sed 's/^/'$add'./')
+			echo "$res" | anew result.txt
+			result=$(echo "$lines" | sed 's/'$res2'/'$res'/g')
+			echo "$result" | sort -u | tee -a ./result/"$save"-Pre.Add.txt
+
+		done < "$exp"
+
+	done < "$domain"
+	httpx -l "./result/"$save"-all.txt" -silent --status-code -o "./result/"$save"-resolved.txt"
+    ;;  
+
+  all)
+    while read lines
+	do
+		while read add
+		do
+			res2=$(echo "$lines" | cut -d . -f 1)
+			res=$(echo "$lines" | cut -d . -f 1 | sed -e 's/$/-'$add'/')
+
+			result=$(echo "$lines" | sed 's/'$res2'/'$res'/g')
+			echo "$result" | sort -u | tee -a ./result/"$save"-all.txt
+
+
+			res3=$(echo "$lines" | cut -d . -f 1 | sed 's/^/'$add'-/') 
+
+			result=$(echo "$lines" | sed 's/'$res2'/'$res3'/g')
+			echo "$result" | sort -u | tee -a ./result/"$save"-all.txt
+
+
+			res4=$(echo "$lines" | cut -d . -f 1 | sed -e 's/$/'.$add'/')
+
+			result=$(echo "$lines" | sed 's/'$res2'/'$res4'/g')
+			echo "$result" | sort -u | tee -a ./result/"$save"-all.txt
+
+
+			res5=$(echo "$lines" | cut -d . -f 1 | sed 's/^/'$add'./')
+			result=$(echo "$lines" | sed 's/'$res2'/'$res5'/g')
+			echo "$result" | sort -u | tee -a ./result/"$save"-all.txt
+
+		done < "$exp"
+
+	done < "$domain"
+	printf "\n \n ${RED}Resolving Subdomains...${RED}\n"
+	
+	httpx -l "./result/"$save"-all.txt" -silent --status-code -o "./result/"$save"-resolved.txt"
+	printf "\n${RED}File saved in ./result/"$save"-resolved.txt ${RED}\n"
+    ;;
+esac
