@@ -1,0 +1,3 @@
+example.com
+sub.example.com
+tree.example.com
