@@ -115,7 +115,7 @@ case $select in
 		done < "$exp"
 
 	done < "$domain"
-	printf "\n \n ${RED}Resolving Subdomains...${RED}\n"
+	printf "\n \n ${RED}Resolving Subdomains...${RED}\n \n"
 	
 	httpx -l "./result/"$save"-all.txt" -silent --status-code -o "./result/"$save"-resolved.txt"
 	printf "\n${RED}File saved in ./result/"$save"-resolved.txt ${RED}\n"
