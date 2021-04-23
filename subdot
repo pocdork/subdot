@@ -22,7 +22,9 @@ case $select in
 		done < "$exp"
 
 	done < "$domain"
-	httpx -l "./result/"$save"-all.txt" -silent --status-code -o "./result/"$save"-resolved.txt"
+	printf "\n \n ${RED}Resolving Subdomains...${RED}\n \n"
+	httpx -l "./result/"$save"-all.txt" -silent --status-code -o "./result/"$save"-resolved-Post-Add.txt"
+	printf "\n${RED}File saved in ./result/"$save"-resolved-Post-Add.txt ${RED}\n"
     ;;
 
   exp-sub)
@@ -39,7 +41,9 @@ case $select in
 		done < "$exp"
 
 	done < "$domain"
-	httpx -l "./result/"$save"-all.txt" -silent --status-code -o "./result/"$save"-resolved.txt"
+	printf "\n \n ${RED}Resolving Subdomains...${RED}\n \n"
+	httpx -l "./result/"$save"-all.txt" -silent --status-code -o "./result/"$save"-resolved-Pre-Add.txt"
+	printf "\n${RED}File saved in ./result/"$save"-resolved-Pre-Add.txt ${RED}\n"
     ;;
 
   sub.exp)
@@ -56,7 +60,9 @@ case $select in
 		done < "$exp"
 
 	done < "$domain"
-	httpx -l "./result/"$save"-all.txt" -silent --status-code -o "./result/"$save"-resolved.txt"
+	printf "\n \n ${RED}Resolving Subdomains...${RED}\n \n"
+	httpx -l "./result/"$save"-all.txt" -silent --status-code -o "./result/"$save"-resolved-Post.Add.txt"
+	printf "\n${RED}File saved in ./result/"$save"-resolved-Post.Add.txt ${RED}\n"
     ;;
     
   exp.sub)
@@ -73,7 +79,9 @@ case $select in
 		done < "$exp"
 
 	done < "$domain"
-	httpx -l "./result/"$save"-all.txt" -silent --status-code -o "./result/"$save"-resolved.txt"
+	printf "\n \n ${RED}Resolving Subdomains...${RED}\n \n"
+	httpx -l "./result/"$save"-all.txt" -silent --status-code -o "./result/"$save"-resolved-Pre.Add.txt"
+	printf "\n${RED}File saved in ./result/"$save"-resolved-Pre.Add.txt ${RED}\n"
     ;;  
 
   all)
