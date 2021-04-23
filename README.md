@@ -42,11 +42,13 @@ ext.sub.example.com
 </p>
 <h2>Usage</h2>
 <p>
-	Use `all` argument for perform all operation.
+	Use <code>all</code> argument for perform all operation.
+	
 ```
 ./subdot <<< "[sub-exp/sub.exp/exp-sub/exp.sub/all] domains.txt exp.txt out.txt"
 ```
-	       The result then will be passed to <b>httpx</b> and you'll get final result like this:
+	       
+<p>The result then will be passed to <b>httpx</b> and you'll get final result like this:</p>
 	       
 ```
 https://sub-test.example.com [200]
@@ -55,4 +57,8 @@ https://sub-ext.example.com [503]
 https://sub.test.example.com [301]
 https://sub.ext.example.com [401]	
 ```
+</p>
+<h2>ToDo</h2>
+<p>
+* Perform multi level subdomain discovery
 </p>
