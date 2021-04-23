@@ -22,7 +22,7 @@ sub-test.example.com
 sub-ext.example.com
 ...
 sub.test.example.com
-sub.ext.example.com	
+sub.ext.example.com
 ```
 </p>
 <h2>PreAdd</h2>
@@ -53,9 +53,11 @@ ext.sub.example.com
 ```
 https://sub-test.example.com [200]
 https://sub-ext.example.com [503]
+https://example-ext.com [404]
 ...
 https://sub.test.example.com [301]
-https://sub.ext.example.com [401]	
+https://sub.ext.example.com [401]
+https://exampletest.com [200]
 ```
 </p>
 <h2>ToDo</h2>
