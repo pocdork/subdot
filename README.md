@@ -42,6 +42,13 @@ ext.sub.example.com
 </p>
 <h2>Usage</h2>
 <p>
+	
+```
+git clone https://github.com/pocdork/subdot.git
+cd subdot
+chmod +x subdot
+```
+	       
 	Use <code>all</code> argument for perform all operation.
 	
 ```
