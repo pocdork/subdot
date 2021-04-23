@@ -12,13 +12,14 @@
 <br>
 <h2>Requirements</h2>
 <p>
-	<h4>PostAdd:</h4> <br>
+	<h4>PostAdd:</h4>
 	
 </p>
 ./subdot <<< "sub-exp domains.txt exp.txt out.txt"
-
+```
 sub-test.example.com
 sub-ext.example.com
 ...
 sub.test.example.com
 sub.ext.example.com
+```
