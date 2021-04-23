@@ -12,13 +12,14 @@
 <br>
 <h2>Requirements</h2>
 <p>
-
+	
+```
 ./subdot <<< "sub-exp domains.txt exp.txt out.txt"
+```
 <br>
 sub-test.example.com<br>
 sub-ext.example.com<br>
 ...<br>
 sub.test.example.com<br>
-sub.ext.example.com<br>
-	
+sub.ext.example.com<br>	
 </p>
