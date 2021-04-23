@@ -103,6 +103,14 @@ case $select in
 			res5=$(echo "$lines" | cut -d . -f 1 | sed 's/^/'$add'./')
 			result=$(echo "$lines" | sed 's/'$res2'/'$res5'/g')
 			echo "$result" | sort -u | tee -a ./result/"$save"-all.txt
+			
+			res6=$(echo "$lines" | cut -d . -f 1 | sed 's/^/'$add'/')
+			result=$(echo "$lines" | sed 's/'$res2'/'$res6'/g')
+			echo "$result" | sort -u | tee -a ./result/"$save"-all.txt
+
+			res7=$(echo "$lines" | cut -d . -f 1 | sed -e 's/$/'$add'/')
+			result=$(echo "$lines" | sed 's/'$res2'/'$res7'/g')
+			echo "$result" | sort -u | tee -a ./result/"$save"-all.txt
 
 		done < "$exp"
 
