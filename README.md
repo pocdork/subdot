@@ -59,9 +59,9 @@ https://sub.ext.example.com [401]
 ```
 </p>
 <h2>ToDo</h2>
-<p>
+
 * Perform multi level subdomain discovery
-</p>
+
 <h2>Follow Me</h2>
 <p>
 	
