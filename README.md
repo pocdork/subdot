@@ -49,7 +49,7 @@ cd subdot
 chmod +x subdot
 ```
 	       
-	Use <code>all</code> argument for perform all operation.
+Use <code>all</code> argument for perform all operation.
 	
 ```
 ./subdot <<< "[sub-exp/sub.exp/exp-sub/exp.sub/all] domains.txt exp.txt out.txt"
