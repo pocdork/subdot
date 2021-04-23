@@ -65,8 +65,6 @@ https://sub.ext.example.com [401]
 <h2>Follow Me</h2>
 <p>
 	
-[![homepage][1]][2]
-[1]
-[2]:	https://twitter.com/pocdork/
+<a href="https://twitter.com/pocdork/"><img src="images/twitter.svg" width="50" height="50"></a>
 </p>
 
