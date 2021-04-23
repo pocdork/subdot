@@ -7,5 +7,18 @@
 <br>
 <h2>Requirements</h2>
 <p>
-	<h4>HTTPX:</h4> Thanks to <a href="https://github.com/projectdiscovery">ProjectDiscovery</a> for such a great tool. Download <b>httpx</b> from <a href="https://github.com/projectdiscovery/httpx">here</a>.
+	<h4>HTTPX:</h4> Thanks to <a href="https://github.com/projectdiscovery">ProjectDiscovery</a> for such a great tool. You can download <b>httpx</b> from <a href="https://github.com/projectdiscovery/httpx">here</a>.
 </p>
+<br>
+<h2>Requirements</h2>
+<p>
+	<h4>PostAdd:</h4> <br>
+	
+</p>
+./subdot <<< "sub-exp domains.txt exp.txt out.txt"
+
+sub-test.example.com
+sub-ext.example.com
+...
+sub.test.example.com
+sub.ext.example.com
